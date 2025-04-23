@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>e-Mongolia Profile</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #f5f7fb;
+    }
+
+    .profile-container {
+        max-width: 1000px;
+        margin: 20px auto;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* Дээрх баннер */
+    .cover-banner {
+        position: relative;
+        height: 180px;
+        background-color: #005ce6;
+    }
+
+    .cover-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .logo {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    /* Мэдээлэл хэсэг */
+    .profile-info {
+        display: flex;
+        padding: 30px;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .photo-section {
+        flex: 1 1 200px;
+        max-width: 250px;
+        text-align: center;
+    }
+
+    .user-photo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid #1e90ff;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+
+    .section-title {
+        font-weight: bold;
+        font-size: 16px;
+        color: #1e1e1e;
+    }
+
+    /* Хоёр баганатай мэдээллийн хэсэг */
+    .info-section {
+        flex: 2 1 600px;
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .info-column {
+        flex: 1;
+        min-width: 220px;
+    }
+
+    .info-column p {
+        margin: 5px 0;
+        color: #333;
+    }
+
+    .info-column strong {
+        color: #1a237e;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container">
+    <div class="cover-banner">
+      <img src="profile-img" alt="cover background" class="cover-img" />
+      <div class="logo">
+        <img src="https://emongolia3-0.github.io/Bat-OrgilBatkhuyg/main-container-image-other/8fde1bff28e0829fc03969d4a8544b90.svg" alt="eMongolia logo" />
+      </div>
+    </div>
+
+    <div class="profile-info">
+      <div class="photo-section">
+        <img src="data:image/jpeg;base64,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" alt="" class="minii zurag.jpg" />
+        <p class="section-title">Үндсэн мэдээлэл</p>
+      </div>
+
+      <div class="info-section">
+        <div class="info-column">
+          <p><strong>Ургын овог:</strong> Хуцаай</p>
+          <p><strong>Нэр:</strong> БАТ-ОРГИЛ</p>
+          <p><strong>Хүйс:</strong> Эрэгтэй</p>
+          <p><strong>Иргэний үнэмлэх:</strong></p>
+          <p><strong>Бүртгэлийн дугаар:</strong> 262027898161</p>
+          <p><strong>Олгосон огноо:</strong> 2018-06-12</p>
+        </div>
+
+        <div class="info-column">
+          <p><strong>Овог:</strong> Батхуяг</p>
+          <p><strong>Регистрийн дугаар:</strong> УЦ02250717</p>
+          <p><strong>Яс үндэс:</strong> Халх</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Өрхийн болон Тээврийн мэдээлэл</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fb;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Өрхийн мэдээлэл --- */
+    .household-info {
+      background-color: #f9fbfe;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+    }
+
+    .household-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .household-header img {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .household-header span {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .household-info p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .household-info a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .household-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Тээврийн хэрэгсэл --- */
+    .vehicle-info {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+      background-color: #f9fcff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .icon {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .message-box {
+      display: flex;
+      align-items: center;
+      background-color: #eef2ff;
+      border-radius: 10px;
+      padding: 15px;
+      color: #000;
+    }
+
+    .icon-box {
+      font-weight: bold;
+      font-size: 24px;
+      margin-right: 15px;
+    }
+
+    .message-text {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Өрхийн мэдээлэл -->
+    <div class="household-info">
+      <div class="household-header">
+        <img src="https://cdn-icons-png.flaticon.com/512/3445/3445851.png" alt="icon">
+        <span>Өрхийн гишүүдийн мэдээлэл</span>
+      </div>
+
+      <p>Ам бүлийн тоо: <a href="#">4</a></p>
+      <p>АМГАЛАН <a href="#">БАТХУЯГ</a></p>
+      <p>АЛТАНХУЯГ <a href="#">ОДМАА</a></p>
+      <p>БАТХУЯГ <a href="#">БАТ-ОРГИЛ</a></p>
+      <p>БАТХУЯГ <a href="#">ЭНХ-ОРГИЛ</a></p>
+    </div>
+
+    <!-- Тээврийн хэрэгсэл -->
+    <div class="vehicle-info">
+      <div class="icon"> Тээврийн хэрэгсэл</div>
+      <div class="message-box">
+        <div class="icon-box">!</div>
+        <div class="message-text">Таны нэр дээр тээврийн хэрэгсэл бүртгэлгүй байна.</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Өрхийн болон Тээврийн мэдээлэл</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fb;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Өрхийн мэдээлэл --- */
+    .household-info {
+      background-color: #f9fbfe;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+    }
+
+    .household-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .household-header img {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .household-header span {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .household-info p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .household-info a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .household-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Тээврийн хэрэгсэл --- */
+    .vehicle-info {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+      background-color: #f9fcff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .icon {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .message-box {
+      display: flex;
+      align-items: center;
+      background-color: #eef2ff;
+      border-radius: 10px;
+      padding: 15px;
+      color: #000;
+    }
+
+    .icon-box {
+      font-weight: bold;
+      font-size: 24px;
+      margin-right: 15px;
+    }
+
+    .message-text {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+
+     <!-- Тээврийн хэрэгсэл -->
+     <div class="vehicle-info">
+        <div class="icon"> Компаниуд</div>
+        <div class="message-box">
+          <div class="icon-box">!</div>
+          <div class="message-text">Таны нэр дээр тээврийн хэрэгсэл бүртгэлгүй байна.</div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+  </html>
+  
+
+
+
+
+
+  <!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Өрхийн болон Тээврийн мэдээлэл</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7fb;
+      margin: 0;
+      padding: 40px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* --- Өрхийн мэдээлэл --- */
+    .household-info {
+      background-color: #f9fbfe;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+    }
+
+    .household-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .household-header img {
+      width: 35px;
+      height: 35px;
+      margin-right: 10px;
+    }
+
+    .household-header span {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .household-info p {
+      margin: 8px 0;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .household-info a {
+      color: #1a73e8;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .household-info a:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Тээврийн хэрэгсэл --- */
+    .vehicle-info {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px 30px;
+      background-color: #f9fcff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .icon {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .message-box {
+      display: flex;
+      align-items: center;
+      background-color: #eef2ff;
+      border-radius: 10px;
+      padding: 15px;
+      color: #000;
+    }
+
+    .icon-box {
+      font-weight: bold;
+      font-size: 24px;
+      margin-right: 15px;
+    }
+
+    .message-text {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+
+     <!-- Тээврийн хэрэгсэл -->
+     <div class="vehicle-info">
+        <div class="icon">🚗 Цусны бүлгийн мэдээлэл</div>
+        <div class="message-box">
+          <div class="icon-box">!</div>
+          <div class="message-text">Таны нэр дээр тээврийн хэрэгсэл бүртгэлгүй байна.</div>
+        </div>
+      </div>
+    </div>
+  
+  </body>
+  </html>
+  
+  <div class="information">
+    <div class="first">
+        <div class="info"><p class="p">Холбоо барих</p></div>
+        <div class="medehgui2">
+            <div class="icon-sha">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>
+            </div>
+            <div class="text-sha">
+                <p>Ш/х-785, Төв шуудан, Сүхбаатарын талбай 1, Чингэлтэй дүүрэг, УБ 15160-0026.</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+            <div class="icon-sha">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>                </div>
+            <div class="text-sha">
+                <p>1111(4)</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+            <div class="icon-sha">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>                </div>
+            <div class="text-sha">
+               <p class="pp">info@e-mongolia.mn</p> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="information">
+    <div class="first">
+        <div class="info">
+            <p class="p">Цэснүүд</p>
+        </div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+                <p>Үйлчилгээнүүд</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+                <p>Аялал, тийз захиалга</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+               <p class="pp">Түгээмэл асуулт, хариулт</p> 
+            </div>
+        </div>
+        <div class="medehgui2">
+            <div class="text-shaa">
+               <p class="pp">Үйлчилгээний нөхцөл</p> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="information">
+    <div class="first">
+        <div class="infoo"><p class="p">Вэб хандалтын тоо</p></div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+                <p>Өнөөдөр: 11,557</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+                <p>Энэ 7 хоног: 14,214</p>
+            </div>
+        </div>
+        <div class="medehgui2">
+
+            <div class="text-shaa">
+               <p class="pp">Энэ сар: 43,316</p> 
+            </div>
+        </div>
+        <div class="medehgui2">
+            <div class="text-shaa">
+               <p class="pp">Нийт: 13,559,978</p> 
+            </div>
+        </div>
+    </div>
+</div>
+<div class="end">
+    <div class="end-logo">
+        <img src="./main-container-picture/d0efeea50b52d8eda1ccf8ee874b3adf.svg" alt="">
+    </div>
+    <div class="end-icon">
+        <div class="icons">
+            <a href="https://www.facebook.com/emongolia">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/></svg>            </div>
+        <div class="icons">
+            <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Femnongoliamn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+            </a>
+        </div>
+        <div class="icons">
+            <a href="https://www.instagram.com/emongoliamn/">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            </a>
+        </div>
+        <div class="icons">
+            <a href="https://www.youtube.com/@e-mongolia243">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="./test.js"></script>
+</body>
+</html>
